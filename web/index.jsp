@@ -10,17 +10,18 @@
 <head>
   <title>Index</title>
 </head>
+<center>
+<body style="background-color:#FBE8F6">
+<br><br><br>
+<h1>Song Ranker</h1>
 
-<body>
-
-<h1>Home</h1>
-
-<h2>Search for an Artist</h2>
+<h3>Search for an Artist</h3>
 
 <form action="SearchArtists" method="get">
-  <input type="text" name="artistName"><br>
+  <input type="text" name="artistName"><br><br>
   <input type="submit" value="Search">
 </form>
 
 </body>
+</center>
 </html>

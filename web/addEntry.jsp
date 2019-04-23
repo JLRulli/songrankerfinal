@@ -10,11 +10,12 @@
 <head>
     <title>Add Entry</title>
 </head>
-<body>
-
-<h1>Add Entry</h1>
+<center>
+<body style="background-color:#FBE8F6">
+<br><br><br>
 
 <h2>Add you top songs for ${artistName}</h2>
+<br>
 
 <%
     String name=request.getParameter("artistName");
@@ -22,14 +23,14 @@
 
 <form action="UpdateEntries" method="get" target="_blank">
     <input type="hidden" name="artistName" value="<%=name%>">
-    Your Name <input type="text" name="userName"><br>
-    #1 <input type="text" name="s1"><br>
-    #2 <input type="text" name="s2"><br>
-    #3 <input type="text" name="s3"><br>
-    #4 <input type="text" name="s4"><br>
-    #5 <input type="text" name="s5"><br>
+    #1 <input type="text" name="s1"><br><br>
+    #2 <input type="text" name="s2"><br><br>
+    #3 <input type="text" name="s3"><br><br>
+    #4 <input type="text" name="s4"><br><br>
+    #5 <input type="text" name="s5"><br><br><br>
     <input type="submit" value="Submit">
 </form>
 
 </body>
+</center>
 </html>

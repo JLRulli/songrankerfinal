@@ -10,18 +10,18 @@
 <head>
     <title>Index</title>
 </head>
+<center>
+<body style="background-color:#FBE8F6">
+<br><br><br>
+<h1>Top Ranked Songs for ${artistName}</h1>
 
-<body>
-
-<h1>${artistName}</h1>
-
-<h2>
-${n0} ${r0}<br>
-${n1} ${r1}<br>
-${n2} ${r2}<br>
-${n3} ${r3}<br>
-${n4} ${r4}<br>
-</h2>
+<h3>
+#1  ${n0}   with ${r0} points<br>
+#2  ${n1}   with ${r1} points<br>
+#3  ${n2}   with ${r2} points<br>
+#4  ${n3}   with ${r3} points<br>
+#5  ${n4}   with ${r4} points<br>
+</h3>
 
 <%
     String name=request.getParameter("artistName");
@@ -33,4 +33,5 @@ ${n4} ${r4}<br>
 </form>
 
 </body>
+</center>
 </html>
