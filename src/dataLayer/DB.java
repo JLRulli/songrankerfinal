@@ -9,7 +9,6 @@ import java.util.HashMap;
 public class DB {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-
     String DB_Url = System.getProperty("JDBC_CONNECTION_STRING");
     String DB_User = System.getProperty("JDBC_USER");
     String DB_Password = System.getProperty("JDBC_PASSWORD");
