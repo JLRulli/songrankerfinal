@@ -42,10 +42,12 @@ public class SearchArtists extends HttpServlet {
             int count = 0;
             HashMap<String, Integer> fin = new HashMap<>();
             for (Map.Entry<String, Integer> entry : temp.entrySet()) {
-                if (count > 5) {
+                if (count >= 5) {
                     break;
                 }
                 System.out.println((entry.getKey() + entry.getValue()));
+                request.setAttribute("n" + String.valueOf(count), entry.getKey());
+                request.setAttribute("r" + String.valueOf(count), entry.getValue());
                 count++;
             }
             //System.out.println(Arrays.asList(fin));

@@ -16,11 +16,19 @@
 
 <h1>${artistName}</h1>
 
+<h2>
+${n0} ${r0}<br>
+${n1} ${r1}<br>
+${n2} ${r2}<br>
+${n3} ${r3}<br>
+${n4} ${r4}<br>
+</h2>
+
 <%
     String name=request.getParameter("artistName");
 %>
 
-<form action="/addEntry" method="get" target="_blank">c
+<form action="/addEntry" method="get" target="_blank">
     <input type="hidden" name="artistName" value="<%=name%>">
     <input type="submit" value="Add Entry">
 </form>
