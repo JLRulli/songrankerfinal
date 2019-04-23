@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DB {
 
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/songranker";
     static final String USER = "songranker";
     static final String PASS = "1qaz!QAZ";
@@ -20,7 +20,7 @@ public class DB {
         Statement statement = null;
         String s = "";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URL, USER, PASS);
             statement = connection.createStatement();
             s = "SELECT * FROM artists WHERE artist = \"" + name + "\"";

@@ -1,5 +1,7 @@
 package webapp;
 
+import dataLayer.DB;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +24,10 @@ public class SearchArtists extends HttpServlet {
         //get artistName
         String aname = request.getParameter("artistName");
 
+        DB db = new DB();
+        if (db.isArtist(aname)) {
+            System.out.println("SUCESS!!!");
+        }
         //dispatch to listArtist
         request.setAttribute("artistName", aname);
         RequestDispatcher rd = request.getRequestDispatcher("/listArtists.jsp");
