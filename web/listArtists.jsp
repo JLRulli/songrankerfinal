@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <title>Index</title>
 </head>
 
@@ -28,7 +27,7 @@ ${n4} ${r4}<br>
     String name=request.getParameter("artistName");
 %>
 
-<form action="/addEntry" method="get" target="_blank">
+<form action="addEntry" method="get" target="_blank">
     <input type="hidden" name="artistName" value="<%=name%>">
     <input type="submit" value="Add Entry">
 </form>

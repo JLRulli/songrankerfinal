@@ -13,7 +13,7 @@
 
 <body>
 
-<h1>Home - JSP</h1>
+<h1>Home</h1>
 
 <h2>Search for an Artist</h2>
 

@@ -20,14 +20,6 @@ public class HashMaps {
 
     }
 
-    public HashMap<String, Integer> top5 (HashMap<String, Integer> hashMap) {
-
-        HashMap<String, Integer> fin = new HashMap<>();
-
-
-
-        return fin;
-    }
 
 }
 

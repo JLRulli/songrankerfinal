@@ -58,6 +58,10 @@ public class SearchArtists extends HttpServlet {
             rd.forward(request,response);
         } else {
 
+            request.setAttribute("artistName", aname);
+            RequestDispatcher rd = request.getRequestDispatcher("/listArtists.jsp");
+            rd.forward(request,response);
+
         }
 
     }
