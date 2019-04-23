@@ -9,9 +9,11 @@ import java.util.HashMap;
 public class DB {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/songranker";
-    static final String USER = "songranker";
-    static final String PASS = "1qaz!QAZ";
+
+    String DB_Url = System.getProperty("JDBC_CONNECTION_STRING");
+    String DB_User = System.getProperty("JDBC_USER");
+    String DB_Password = System.getProperty("JDBC_PASSWORD");
+    String DB_Connection_String = DB_Url + "?user=" + DB_User + "&password=" + DB_Password;
 
     public boolean isArtist(String name) {
 
@@ -21,7 +23,10 @@ public class DB {
         String s = "";
         try {
             Class.forName(JDBC_DRIVER);
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            connection = DriverManager.getConnection(DB_Connection_String);
+
             statement = connection.createStatement();
             s = "SELECT * FROM entries WHERE artist = \"" + name + "\"";
             ResultSet resultSet = statement.executeQuery(s);
@@ -45,7 +50,9 @@ public class DB {
         String s = "";
         try {
             Class.forName(JDBC_DRIVER);
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            connection = DriverManager.getConnection(DB_Connection_String);
             statement = connection.createStatement();
             s = "SELECT * FROM entries WHERE artist = \"" + artistName + "\"";
             ResultSet resultSet = statement.executeQuery(s);
@@ -78,7 +85,9 @@ public class DB {
         if (n1 != "") {
             try {
                 Class.forName(JDBC_DRIVER);
-                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                connection = DriverManager.getConnection(DB_Connection_String);
                 statement = connection.createStatement();
                 s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n1 + "\"";
                 ResultSet resultSet = statement.executeQuery(s);
@@ -109,7 +118,9 @@ public class DB {
         if (n2 != "") {
             try {
                 Class.forName(JDBC_DRIVER);
-                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                connection = DriverManager.getConnection(DB_Connection_String);
                 statement = connection.createStatement();
                 s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n2 + "\"";
                 ResultSet resultSet = statement.executeQuery(s);
@@ -140,7 +151,9 @@ public class DB {
         if (n3 != "") {
             try {
                 Class.forName(JDBC_DRIVER);
-                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                connection = DriverManager.getConnection(DB_Connection_String);
                 statement = connection.createStatement();
                 s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n3 + "\"";
                 ResultSet resultSet = statement.executeQuery(s);
@@ -171,7 +184,9 @@ public class DB {
         if (n4 != "") {
             try {
                 Class.forName(JDBC_DRIVER);
-                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                connection = DriverManager.getConnection(DB_Connection_String);
                 statement = connection.createStatement();
                 s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n4 + "\"";
                 ResultSet resultSet = statement.executeQuery(s);
@@ -202,7 +217,9 @@ public class DB {
         if (n5 != "") {
             try {
                 Class.forName(JDBC_DRIVER);
-                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                //connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                connection = DriverManager.getConnection(DB_Connection_String);
                 statement = connection.createStatement();
                 s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n5 + "\"";
                 ResultSet resultSet = statement.executeQuery(s);
