@@ -1,6 +1,7 @@
 package webapp;
 
 import dataLayer.DB;
+import dataLayer.HashMaps;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 @WebServlet(
         name = "SearchArtists",
@@ -27,12 +30,25 @@ public class SearchArtists extends HttpServlet {
         String aname = request.getParameter("artistName");
 
         DB db = new DB();
+        //artist exists
         if (db.isArtist(aname)) {
 
             System.out.println("EXISTS");
 
             HashMap<String, Integer> hashMap = db.data(aname);
-            System.out.println(Arrays.asList(hashMap));
+            HashMaps hashMaps = new HashMaps();
+            HashMap<String, Integer> temp = hashMaps.sort(hashMap);
+            System.out.println(Arrays.asList(hashMaps.sort(hashMap)));
+            int count = 0;
+            HashMap<String, Integer> fin = new HashMap<>();
+            for (Map.Entry<String, Integer> entry : temp.entrySet()) {
+                if (count > 5) {
+                    break;
+                }
+                System.out.println((entry.getKey() + entry.getValue()));
+                count++;
+            }
+            //System.out.println(Arrays.asList(fin));
 
             //dispatch to listArtist
             request.setAttribute("artistName", aname);
@@ -42,6 +58,6 @@ public class SearchArtists extends HttpServlet {
 
         }
 
-
     }
+
 }
