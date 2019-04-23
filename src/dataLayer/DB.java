@@ -74,10 +74,10 @@ public class DB {
         Connection connection = null;
         Statement statement = null;
         String s = "";
+        int i = 0;
+        //5
         boolean b = false;
-
-        for (int i = 1; i < 6; i++) {
-
+        if (n1 != "") {
             try {
                 Class.forName(JDBC_DRIVER);
                 connection = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -86,23 +86,151 @@ public class DB {
                 ResultSet resultSet = statement.executeQuery(s);
                 if (resultSet.next()) {
                     b = true;
+                    i = resultSet.getInt("number") + 5;
                     System.out.println("TRUE");
                 }
                 //exists
                 if (b) {
-                    s = "UPDATE \"entries\" SET \"number\" = '8' WHERE (\"song\" = 'Goku')";
-                    //ResultSet resultSet2 = statement.executeUpdate(s);
+                    System.out.println("update");
+                    s = "UPDATE entries SET number = " + i + " WHERE song = \"" + n1 + "\"";
+                    statement.executeUpdate(s);
                 } else {
-
+                    System.out.println("add");
+                    s = "INSERT INTO entries (artist, song, number) VALUES ( '" + name + "' , '" + n1 + "' , 5 )";
+                    statement.executeUpdate(s);
                 }
-                resultSet.close();
+                //resultSet.close();
                 statement.close();
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
+        //4
+        b = false;
+        if (n2 != "") {
+            try {
+                Class.forName(JDBC_DRIVER);
+                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                statement = connection.createStatement();
+                s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n2 + "\"";
+                ResultSet resultSet = statement.executeQuery(s);
+                if (resultSet.next()) {
+                    b = true;
+                    i = resultSet.getInt("number") + 4;
+                    System.out.println("TRUE");
+                }
+                //exists
+                if (b) {
+                    System.out.println("update");
+                    s = "UPDATE entries SET number = " + i + " WHERE song = \"" + n2 + "\"";
+                    statement.executeUpdate(s);
+                } else {
+                    System.out.println("add");
+                    s = "INSERT INTO entries (artist, song, number) VALUES ( '" + name + "' , '" + n2 + "' , 4 )";
+                    statement.executeUpdate(s);
+                }
+                //resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        //3
+        b = false;
+        if (n3 != "") {
+            try {
+                Class.forName(JDBC_DRIVER);
+                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                statement = connection.createStatement();
+                s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n3 + "\"";
+                ResultSet resultSet = statement.executeQuery(s);
+                if (resultSet.next()) {
+                    b = true;
+                    i = resultSet.getInt("number") + 3;
+                    System.out.println("TRUE");
+                }
+                //exists
+                if (b) {
+                    System.out.println("update");
+                    s = "UPDATE entries SET number = " + i + " WHERE song = \"" + n3 + "\"";
+                    statement.executeUpdate(s);
+                } else {
+                    System.out.println("add");
+                    s = "INSERT INTO entries (artist, song, number) VALUES ( '" + name + "' , '" + n3 + "' , 3 )";
+                    statement.executeUpdate(s);
+                }
+                //resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        //2
+        b = false;
+        if (n4 != "") {
+            try {
+                Class.forName(JDBC_DRIVER);
+                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                statement = connection.createStatement();
+                s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n4 + "\"";
+                ResultSet resultSet = statement.executeQuery(s);
+                if (resultSet.next()) {
+                    b = true;
+                    i = resultSet.getInt("number") + 2;
+                    System.out.println("TRUE");
+                }
+                //exists
+                if (b) {
+                    System.out.println("update");
+                    s = "UPDATE entries SET number = " + i + " WHERE song = \"" + n4 + "\"";
+                    statement.executeUpdate(s);
+                } else {
+                    System.out.println("add");
+                    s = "INSERT INTO entries (artist, song, number) VALUES ( '" + name + "' , '" + n4 + "' , 2 )";
+                    statement.executeUpdate(s);
+                }
+                //resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        //1
+        b = false;
+        if (n5 != "") {
+            try {
+                Class.forName(JDBC_DRIVER);
+                connection = DriverManager.getConnection(DB_URL, USER, PASS);
+                statement = connection.createStatement();
+                s = "SELECT * FROM entries WHERE artist = \"" + name + "\" AND song = \"" + n5 + "\"";
+                ResultSet resultSet = statement.executeQuery(s);
+                if (resultSet.next()) {
+                    b = true;
+                    i = resultSet.getInt("number") + 1;
+                    System.out.println("TRUE");
+                }
+                //exists
+                if (b) {
+                    System.out.println("update");
+                    s = "UPDATE entries SET number = " + i + " WHERE song = \"" + n5 + "\"";
+                    statement.executeUpdate(s);
+                } else {
+                    System.out.println("add");
+                    s = "INSERT INTO entries (artist, song, number) VALUES ( '" + name + "' , '" + n5 + "' , 1 )";
+                    statement.executeUpdate(s);
+                }
+                //resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
 
     }
 
